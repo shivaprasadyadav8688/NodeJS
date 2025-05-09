@@ -1,0 +1,294 @@
+.container {
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+    display: grid;
+    grid-template-rows: auto auto auto auto auto auto;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "navigation navigation navigation"
+                         "profile info info"
+                         "project1 project2 project3"
+                         "exp-edu-blog-cert exp-edu-blog-cert exp-edu-blog-cert"
+                         "exp-edu-blog-cert exp-edu-blog-cert exp-edu-blog-cert"
+                         "contact contact contact";
+    gap: 20px;
+}
+
+.hamburger-checkbox {
+    display: none;
+}
+
+.hamburger-icon {
+    display: none;
+    cursor: pointer;
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    z-index: 1000;
+    background-color: #333;
+    padding: 10px;
+    border-radius: 3px;
+}
+
+.hamburger-line {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+}
+
+header nav.navigation {
+    grid-area: navigation;
+    background: #333;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding: 15px;
+    z-index: 900;
+}
+
+header nav.navigation a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1rem;
+    margin: 0px 20px;
+}
+
+header nav.navigation a:hover {
+    color: #a68a64;
+}
+
+.profile {
+    grid-area: profile;
+    border-radius: 10px;
+    margin-top: 60px;
+    text-align: center;
+    background-color: #fff;
+}
+
+.profile img {
+    width: 14em;
+    height: 13em;
+    border: 1px solid #000;
+    border-radius: 10px;
+}
+
+.profile h3 {
+    padding-top: 5px;
+    margin: 0;
+    color: #333;
+}
+
+.info {
+    grid-area: info;
+    border-radius: 10px;
+    text-align: left;
+    background-color: #a68a64;
+    padding: 30px;
+    border: 1px solid #000;
+    border-radius: 10px;
+    margin-top: 40px;
+}
+
+.project1 img, .project2 img, .project3 img {
+    width: 100px;
+    height: 100px;
+    display: block;
+    margin: 0 auto;
+}
+
+.project1 h4, .project2 h4, .project3 h4 {
+    text-align: center;
+    margin: 10px 0;
+    color: #333;
+}
+
+.project1, .project2, .project3 {
+    padding: 30px;
+    background-color: #b6ad90;
+    border: 1px solid #000;
+    border-radius: 10px;
+    text-align: left;
+}
+
+.project1 {
+    grid-area: project1;
+}
+
+.project2 {
+    grid-area: project2;
+}
+
+.project3 {
+    grid-area: project3;
+}
+
+.exp-edu-blog-cert {
+    grid-area: exp-edu-blog-cert;
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: 1fr 1fr ;
+    grid-template-areas: "experience education"
+                         "blogs certifications";
+                         
+    gap: 20px;
+}
+
+.experience, .education {
+    text-align: left;
+    padding: 30px;
+    background-color: #c2c5aa;
+    border: 1px solid #000;
+    border-radius: 10px;
+}
+
+.experience {
+    grid-area: experience;
+}
+
+.education {
+    grid-area: education;
+}
+
+.blogs, .certifications {
+    text-align: left;
+    padding: 30px;
+    background-color: #a4ac86;
+    border: 1px solid #000;
+    border-radius: 10px;
+}
+
+.blogs {
+    grid-area: blogs;
+}
+
+.certifications {
+    grid-area: certifications;
+}
+
+.experience h3,
+.education h3,
+.blogs h3,
+.certifications h3 {
+    display: inline;
+    vertical-align: top;
+    color:#333;
+}
+
+img {
+    width: 30px;
+    height: 30px;
+}
+
+footer.contact {
+    grid-area: contact;
+    background: #656d4a;
+    padding: 10px;
+    text-align: center;
+}
+
+footer.contact img {
+    width: 30px;
+    height: 30px;
+    margin: 0 100px;
+}
+
+@media screen and (max-width: 500px) {
+    .container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "navigation"
+            "profile"
+            "info"
+            "project1"
+            "project2"
+            "project3"
+            "exp-edu-blog-cert"
+            "contact";
+    }
+    
+    .hamburger-icon {
+        display: block;
+    }
+    
+    header nav.navigation {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: #000;
+        padding-top: 60px;
+        z-index: 900;
+    }
+    
+    .hamburger-checkbox:checked ~ nav.navigation {
+        display: block;
+    }
+    
+    header nav.navigation a {
+        display: block;
+        margin: 10px 0;
+        padding: 10px;
+        font-size: 1em;
+    }
+
+    .profile {
+        margin-top: 80px;
+    }
+
+    .profile img {
+        width: 10em;
+        height: 10em;
+        display: block;
+        margin: 0 auto 10px auto;
+    }
+
+    .info {
+        margin-top: 0px;
+    }
+    
+    .project1 img,
+    .project2 img,
+    .project3 img {
+        width: 80px;
+        height: 80px;
+        display: block;
+        text-align: center;
+    }
+
+    .exp-edu-blog-cert {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "experience"
+            "education"
+            "blogs"
+            "certifications";
+    }
+
+    .blogs,
+    .certifications,
+    .education,
+    .experience,
+    .project1,
+    .project2,
+    .project3 {
+        text-align: left;
+        padding: 20px;
+    }
+
+    footer.contact img {
+        width: 30px;
+        height: 30px;
+        margin: 5px;
+    }
+
+    footer.contact a {
+        margin : 0px 15px;
+    }
+}
